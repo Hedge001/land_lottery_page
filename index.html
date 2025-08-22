@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LAND Lottery - Win $5,000 in LAND Tokens | Landshare</title>
+    <title>LAND Staking - Win Your Share | Landshare</title>
     <link rel="icon" type="image/png" href="landshare_favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,28 +67,21 @@
             opacity: 0;
         }
 
-        .hero h1 {
+        .hero-banner {
+            animation-delay: 0.05s;
+        }
+
+
+        .hero-subtitle {
             animation-delay: 0.1s;
         }
 
-        .hero-subtitle {
+        .hero-info-grid {
+            animation-delay: 0.15s;
+        }
+
+        .hero-cta-group {
             animation-delay: 0.2s;
-        }
-
-        .prize-banner {
-            animation-delay: 0.3s;
-        }
-
-        .countdown {
-            animation-delay: 0.4s;
-        }
-
-        .cta-primary {
-            animation-delay: 0.5s;
-        }
-
-        .cta-secondary {
-            animation-delay: 0.6s;
         }
 
         /* Scroll-triggered animations */
@@ -154,28 +147,26 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 30px;
         }
 
         /* Header */
         .header {
             background: white;
-            padding: 1.2rem 0;
+            padding: 1rem 0;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 100;
-            border-radius: 0 0 20px 20px;
-            margin: 0 1rem;
         }
 
         .nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
@@ -188,13 +179,45 @@
         }
 
         .logo-icon {
-            width: 62px;
-            height: 62px;
+            width: 48px;
+            height: 48px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+        }
+
+        .logo-icon img {
+            object-fit: contain;
+            object-position: center;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Banner Styles */
+        .hero-banner {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-banner:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            object-position: center;
         }
 
         .nav-center {
@@ -325,11 +348,11 @@
         .hero {
             background: white;
             color: #1e293b;
-            padding: 6rem 0;
+            padding: 4rem 0;
             text-align: center;
             position: relative;
             overflow: hidden;
-            min-height: 100vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
         }
@@ -341,45 +364,49 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(74, 222, 128, 0.03) 0%, rgba(34, 197, 94, 0.03) 100%);
+            background: linear-gradient(135deg, rgba(74, 222, 128, 0.05) 0%, rgba(34, 197, 94, 0.02) 50%, rgba(255, 255, 255, 0.8) 100%);
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
             width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: #1e293b;
-            line-height: 1.1;
-        }
 
         .hero-subtitle {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             margin-bottom: 3rem;
             color: #64748b;
-            max-width: 600px;
+            max-width: 650px;
             margin-left: auto;
             margin-right: auto;
             font-weight: 400;
+            line-height: 1.6;
         }
 
-        .prize-banner {
-            background: white;
-            border: 2px solid #f1f5f9;
-            border-radius: 16px;
-            padding: 3rem 2rem;
+        /* Prize and Countdown Container */
+        .hero-info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
             margin: 3rem auto;
-            max-width: 500px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            max-width: 700px;
+        }
+        
+        .prize-banner {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border: 2px solid #22c55e;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 4px 20px rgba(34, 197, 94, 0.15);
             position: relative;
             overflow: hidden;
             transform: scale(1);
             transition: all 0.3s ease;
+            text-align: center;
         }
 
         .prize-banner:hover {
@@ -389,9 +416,9 @@
         }
 
         .prize-amount {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             color: #22c55e;
             position: relative;
             z-index: 2;
@@ -405,16 +432,22 @@
             font-weight: 400;
         }
 
+        .hero-cta-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            justify-content: center;
+        }
+        
         .cta-primary {
             background: #22c55e;
             color: white;
-            padding: 1.5rem 3rem;
-            border-radius: 12px;
+            padding: 0.8rem 1.8rem;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.2rem;
+            font-size: 1rem;
             display: inline-block;
-            margin: 1.5rem 1rem;
             transition: all 0.3s ease;
             box-shadow: 0 4px 15px rgba(34, 197, 94, 0.2);
             border: none;
@@ -422,21 +455,20 @@
 
         .cta-primary:hover {
             background: #16a34a;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.3), inset 0px 0px 15px rgba(97, 205, 129, 0.3);
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.4), inset 0px 0px 20px rgba(97, 205, 129, 0.5);
         }
 
         .cta-secondary {
             background: white;
             color: #1e293b;
-            padding: 1.5rem 3rem;
+            padding: 0.8rem 1.8rem;
             border: 2px solid #e2e8f0;
-            border-radius: 12px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.2rem;
+            font-size: 1rem;
             display: inline-block;
-            margin: 1.5rem 1rem;
             transition: all 0.3s ease;
         }
 
@@ -449,39 +481,57 @@
 
         /* How It Works Section */
         .how-it-works {
-            padding: 4rem 0;
-            background: #f8fafc;
+            padding: 5rem 0;
+            background: linear-gradient(180deg, #f8fafc 0%, rgba(248, 250, 252, 0.8) 100%);
+            position: relative;
+        }
+        
+        .how-it-works::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(34, 197, 94, 0.02) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 700;
             margin-bottom: 3rem;
             color: #1e293b;
+            line-height: 1.2;
         }
 
         .steps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-bottom: 3rem;
+            align-items: stretch;
         }
 
         .step-card {
             background: white;
             padding: 2.5rem;
-            border-radius: 16px;
+            border-radius: 20px;
             text-align: center;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+            transition: all 0.3s ease-out;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 100%;
         }
 
         .step-card:hover {
             border-color: #22c55e;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), inset 0px 0px 15px rgba(97, 205, 129, 0.3);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), inset 0 0 20px rgba(34, 197, 94, 0.1);
         }
 
         .step-number {
@@ -499,20 +549,23 @@
         }
 
         .step-title {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 1rem;
             color: #1e293b;
+            line-height: 1.4;
         }
 
         .step-description {
             color: #64748b;
             line-height: 1.6;
+            font-size: 0.95rem;
+            flex-grow: 1;
         }
 
         /* Rewards Section */
         .rewards {
-            padding: 6rem 0;
+            padding: 7rem 0;
             background: white;
             color: #1e293b;
             position: relative;
@@ -539,7 +592,7 @@
 
         .rewards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
             margin-top: 3rem;
             position: relative;
@@ -547,35 +600,34 @@
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
-            justify-items: center;
+            align-items: stretch;
         }
 
         .reward-card {
             background: white;
-            padding: 2.5rem 2rem;
-            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            border-radius: 20px;
             text-align: center;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s ease;
+            border: 1px solid rgba(226, 232, 240, 0.5);
+            transition: all 0.3s ease-out;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            min-height: 200px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            min-height: 100%;
             width: 100%;
-            max-width: 280px;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
         .reward-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), inset 0px 0px 15px rgba(97, 205, 129, 0.3);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), inset 0 0 20px rgba(34, 197, 94, 0.1);
             border-color: #22c55e;
         }
 
         .reward-place {
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-bottom: 1rem;
             position: relative;
             z-index: 2;
@@ -584,25 +636,39 @@
         }
 
         .reward-amount {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: 2rem;
+            font-weight: 600;
             color: #22c55e;
             margin-bottom: 1rem;
             position: relative;
             z-index: 2;
+            line-height: 1.2;
         }
 
         .reward-card p {
             position: relative;
             z-index: 2;
             color: #64748b;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
+            line-height: 1.4;
         }
 
         /* Requirements Section */
         .requirements {
-            padding: 4rem 0;
-            background: #f8fafc;
+            padding: 6rem 0;
+            background: linear-gradient(180deg, #f8fafc 0%, rgba(248, 250, 252, 0.8) 100%);
+            position: relative;
+        }
+        
+        .requirements::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 80% 80%, rgba(34, 197, 94, 0.02) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .requirements-grid {
@@ -615,15 +681,15 @@
         .requirement-card {
             background: white;
             padding: 2.5rem;
-            border-radius: 16px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            border-radius: 20px;
+            border: 1px solid rgba(226, 232, 240, 0.5);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease-out;
         }
 
         .requirement-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1), inset 0px 0px 15px rgba(97, 205, 129, 0.3);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), inset 0 0 20px rgba(34, 197, 94, 0.1);
             border-color: #22c55e;
         }
 
@@ -653,21 +719,34 @@
 
         /* CTA Section */
         .final-cta {
-            padding: 6rem 0;
-            background: #22c55e;
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
             color: white;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            pointer-events: none;
         }
 
         .final-cta h2 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .final-cta p {
-            font-size: 1.25rem;
-            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
             opacity: 0.95;
         }
 
@@ -689,12 +768,11 @@
             border: 2px solid #f1f5f9;
             border-radius: 16px;
             padding: 2.5rem 2rem;
-            margin: 3rem auto;
-            max-width: 600px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             position: relative;
             overflow: hidden;
             transition: all 0.3s ease;
+            text-align: center;
         }
 
         .countdown:hover {
@@ -704,8 +782,8 @@
         }
 
         .countdown h3 {
-            margin-bottom: 2rem;
-            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
             color: #1e293b;
             position: relative;
             z-index: 2;
@@ -715,7 +793,7 @@
         .timer {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 0.8rem;
             position: relative;
             z-index: 2;
         }
@@ -723,9 +801,9 @@
         .time-unit {
             text-align: center;
             background: #f8fafc;
-            padding: 1.5rem 1rem;
+            padding: 1.2rem 0.8rem;
             border-radius: 12px;
-            min-width: 100px;
+            min-width: 65px;
             border: 1px solid #e2e8f0;
             transition: all 0.3s ease;
         }
@@ -737,7 +815,7 @@
         }
 
         .time-number {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
             display: block;
             color: #22c55e;
@@ -753,7 +831,7 @@
         /* Responsive */
         @media (max-width: 1024px) {
             .container {
-                padding: 0 16px;
+                padding: 0 24px;
             }
             
             .hero h1 {
@@ -761,24 +839,98 @@
             }
             
             .section-title {
-                font-size: 2.2rem;
+                font-size: 2rem;
+            }
+            
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            
+            .rewards-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .logo-icon {
+                width: 48px;
+                height: 48px;
+            }
+            
+            .nav {
+                padding: 0 1.2rem;
+            }
+            
+            .hero-content {
+                gap: 1.5rem;
+            }
+            
+            .hero-banner {
+                border-radius: 12px;
             }
         }
 
         @media (max-width: 768px) {
             .hero {
-                padding: 4rem 0;
-                min-height: 90vh;
+                padding: 3rem 0;
+                min-height: 75vh;
             }
             
-            .hero h1 {
-                font-size: 2.8rem;
-                line-height: 1.2;
+            .hero-banner {
+                max-width: 95%;
+                margin-bottom: 1.5rem;
+                border-radius: 16px;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+                margin-bottom: 2rem;
+            }
+            
+            .hero-info-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin: 2rem auto;
+            }
+            
+            .hero-cta-group {
+                flex-wrap: wrap;
+                gap: 1rem;
+                margin-top: 2rem;
+            }
+            
+            .final-cta {
+                padding: 2.5rem 0;
+            }
+            
+            .final-cta h2 {
+                font-size: 1.8rem;
             }
             
             .hero-subtitle {
                 font-size: 1.2rem;
-                margin-bottom: 2rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero-banner {
+                max-width: 100%;
+                margin: 0 auto;
+                border-radius: 12px;
+            }
+            
+            .timer {
+                gap: 0.6rem;
+            }
+            
+            .time-unit {
+                min-width: 55px;
+                padding: 1rem 0.6rem;
             }
             
             .prize-banner {
@@ -849,14 +1001,17 @@
             }
             
             .rewards-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                grid-template-columns: 1fr;
                 gap: 1.5rem;
-                justify-items: center;
             }
             
             .steps-grid, .requirements-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
+            }
+            
+            .step-card {
+                min-height: auto;
             }
             
             .footer-grid {
@@ -873,18 +1028,75 @@
                 justify-content: center;
             }
             
-            .footer-launch-app {
-                margin-left: 0;
+            .footer-submit-ticket {
                 margin-top: 1rem;
-                display: block;
-                text-align: center;
+                display: inline-block;
+                text-align: left;
             }
 
         }
 
         @media (max-width: 480px) {
             .container {
-                padding: 0 12px;
+                padding: 0 16px;
+            }
+            
+            .hero {
+                min-height: 70vh;
+                padding: 2rem 0;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero-banner {
+                margin-bottom: 1rem;
+                border-radius: 12px;
+            }
+            
+            .hero-info-grid {
+                margin: 1.5rem auto;
+            }
+            
+            .hero-cta-group {
+                margin-top: 1.5rem;
+            }
+            
+            .time-unit {
+                min-width: 50px;
+                padding: 0.8rem 0.4rem;
+            }
+            
+            .time-number {
+                font-size: 1.4rem;
+            }
+            
+            .prize-amount {
+                font-size: 2.4rem;
+            }
+            
+            .prize-banner, .countdown {
+                padding: 2rem 1.5rem;
+            }
+            
+            .cta-primary, .cta-secondary {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+            
+            .final-cta {
+                padding: 2rem 0;
+            }
+            
+            .final-cta h2 {
+                font-size: 1.6rem;
+            }
+            
+            .final-cta p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
             }
             
             .nav {
@@ -896,8 +1108,12 @@
             }
             
             .logo-icon {
-                width: 36px;
-                height: 36px;
+                width: 42px;
+                height: 42px;
+            }
+            
+            .nav {
+                padding: 0 1rem;
             }
             
             .hero {
@@ -911,6 +1127,13 @@
             
             .hero-subtitle {
                 font-size: 1.1rem;
+            }
+            
+            .hero-banner {
+                max-width: 100%;
+                margin: 0 auto 1.5rem;
+                border-radius: 8px;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             }
             
             .prize-banner {
@@ -969,10 +1192,9 @@
             }
             
             .rewards-grid {
-                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                grid-template-columns: 1fr;
                 gap: 1rem;
                 max-width: 100%;
-                justify-items: center;
             }
             
             .step-card, .requirement-card, .reward-card {
@@ -1009,8 +1231,7 @@
                 align-self: stretch;
             }
             
-            .footer-launch-app {
-                margin-left: 0;
+            .footer-submit-ticket {
                 margin-top: 0.5rem;
             }
             
@@ -1035,12 +1256,21 @@
             }
             
             .logo-icon {
-                width: 32px;
-                height: 32px;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .nav {
+                padding: 0 0.8rem;
             }
             
             .hero h1 {
                 font-size: 2rem;
+            }
+            
+            .hero-banner {
+                margin: 0 auto 1rem;
+                border-radius: 6px;
             }
             
             .timer {
@@ -1073,18 +1303,21 @@
 
         .footer-content {
             background: white;
-            padding: 2.5rem 0 2rem;
+            padding: 4rem 0 3rem;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr 1fr 2fr;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1.2fr;
             gap: 2rem;
             align-items: start;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .footer-brand {
-            max-width: 280px;
+            max-width: 250px;
+            text-align: left;
         }
 
         .footer-logo {
@@ -1092,6 +1325,7 @@
             align-items: center;
             gap: 0.5rem;
             margin-bottom: 1rem;
+            justify-content: flex-start;
         }
 
         .footer-logo-icon {
@@ -1104,6 +1338,13 @@
             overflow: hidden;
         }
 
+        .footer-logo-icon img {
+            object-fit: contain;
+            object-position: center;
+            max-width: 100%;
+            height: auto;
+        }
+
         .footer-description {
             color: #6b7280;
             font-size: 0.9rem;
@@ -1113,7 +1354,7 @@
 
         .social-links {
             display: flex;
-            gap: 1rem;
+            gap: 0.8rem;
             margin-bottom: 1.5rem;
         }
 
@@ -1154,30 +1395,31 @@
             transform: translateY(-1px);
         }
 
-        .footer-launch-app {
+        .footer-submit-ticket {
             display: inline-block;
-            background: #1e293b;
+            background: #22c55e;
             color: white;
-            padding: 0.7rem 1.5rem;
-            border-radius: 6px;
+            padding: 0.8rem 1.8rem;
+            border-radius: 25px;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 0.9rem;
             font-family: "Inter Tight", sans-serif;
             transition: all 0.2s;
-            margin-left: 1rem;
+            margin-top: 1.5rem;
         }
 
-        .footer-launch-app:hover {
-            background: #0f172a;
-            transform: translateY(-1px);
+        .footer-submit-ticket:hover {
+            background: #16a34a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
         }
 
         .footer-section h4 {
             color: #1f2937;
             font-size: 1rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .footer-links {
@@ -1186,31 +1428,38 @@
         }
 
         .footer-links li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
         }
 
         .footer-links a {
             color: #6b7280;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             transition: color 0.2s;
+            line-height: 1.5;
         }
 
         .footer-links a:hover {
             color: #22c55e;
         }
 
+        .newsletter {
+            max-width: 280px;
+            justify-self: end;
+        }
+        
         .newsletter h4 {
             color: #1f2937;
             font-size: 1rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
 
         .newsletter p {
             color: #6b7280;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
         }
 
         .newsletter-form {
@@ -1220,48 +1469,126 @@
 
         .newsletter-input {
             flex: 1;
-            padding: 0.7rem;
-            border: 1px solid #d1d5db;
-            border-radius: 6px;
-            font-size: 0.9rem;
+            padding: 0.9rem 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 0.95rem;
             outline: none;
+            background: #f9fafb;
+            transition: all 0.2s;
         }
 
         .newsletter-input:focus {
             border-color: #22c55e;
             box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+            background: white;
         }
 
         .newsletter-btn {
             background: #22c55e;
             color: white;
             border: none;
-            padding: 0.7rem 1rem;
-            border-radius: 6px;
+            padding: 0.9rem 1.3rem;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
             transition: all 0.2s;
+            min-width: 50px;
         }
 
         .newsletter-btn:hover {
             background: #16a34a;
             transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+        }
+
+        /* Footer Bottom Copyright */
+        .footer-bottom {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        .copyright {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin: 0;
+            font-weight: 400;
         }
 
         /* Responsive Footer */
+        @media (max-width: 1024px) {
+            .footer-content {
+                padding: 3rem 0 2rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+            
+            .footer-brand {
+                grid-column: span 3;
+                max-width: 100%;
+                text-align: left;
+            }
+            
+            .newsletter {
+                grid-column: span 3;
+                max-width: 400px;
+                justify-self: start;
+            }
+            
+            .social-links {
+                justify-content: flex-start;
+            }
+        }
+        
         @media (max-width: 768px) {
+            .footer-content {
+                padding: 2.5rem 0 2rem;
+            }
+            
             .footer-grid {
                 grid-template-columns: 1fr;
-                gap: 2.5rem;
-                text-align: center;
+                gap: 2rem;
+                text-align: left;
             }
 
             .footer-brand {
                 max-width: 100%;
+                grid-column: auto;
+                text-align: left;
+            }
+            
+            .newsletter {
+                grid-column: auto;
+                max-width: 100%;
             }
 
             .social-links {
-                justify-content: center;
+                justify-content: flex-start;
+                gap: 1.5rem;
+            }
+            
+            .footer-logo-icon {
+                width: 42px;
+                height: 42px;
+            }
+            
+            .footer-logo {
+                justify-content: flex-start;
+            }
+            
+            .footer-section h4 {
+                font-size: 1.2rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .footer-links li {
+                margin-bottom: 1rem;
             }
 
         }
@@ -1274,13 +1601,38 @@
             .footer-grid {
                 gap: 2rem;
             }
+            
+            .footer-description {
+                font-size: 0.95rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .social-links {
+                gap: 1rem;
+                margin-bottom: 1.8rem;
+            }
 
             .newsletter-form {
                 flex-direction: column;
+                gap: 0.8rem;
             }
 
             .newsletter-btn {
                 align-self: stretch;
+                padding: 1rem;
+            }
+            
+            .footer-logo-icon {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .footer-section h4 {
+                font-size: 1.1rem;
+            }
+            
+            .footer-links a {
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -1291,7 +1643,7 @@
         <nav class="nav">
             <a href="#" class="logo">
                 <div class="logo-icon">
-                    <img src="land_logo.png" alt="Landshare Logo" width="62" height="62" style="object-fit: contain;">
+                    <img src="land_logo.png" alt="Landshare Logo" width="48" height="48" style="object-fit: contain;">
                 </div>
             </a>
             
@@ -1326,38 +1678,45 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>LAND Lottery</h1>
-                <p class="hero-subtitle">Buy LAND tokens, complete tasks, and win from our $5,000 prize pool</p>
-                
-                <div class="prize-banner">
-                    <div class="prize-amount">$5,000</div>
-                    <div class="prize-description">Total Prize Pool in LAND Tokens</div>
+                <div class="hero-banner">
+                    <img src="land-lottery-banner-new.png" alt="Stake LAND tokens and win prizes" loading="eager">
                 </div>
+                
+                <p class="hero-subtitle">Stake LAND tokens and win your share of the prize pool</p>
+                
+                <div class="hero-info-grid">
+                    <div class="prize-banner">
+                        <div class="prize-amount">$5,000</div>
+                        <div class="prize-description">Total Prize Pool in LAND Tokens</div>
+                    </div>
 
-                <div class="countdown">
-                    <h3>Campaign Ends In:</h3>
-                    <div class="timer">
-                        <div class="time-unit">
-                            <span class="time-number" id="days">30</span>
-                            <span class="time-label">Days</span>
-                        </div>
-                        <div class="time-unit">
-                            <span class="time-number" id="hours">00</span>
-                            <span class="time-label">Hours</span>
-                        </div>
-                        <div class="time-unit">
-                            <span class="time-number" id="minutes">00</span>
-                            <span class="time-label">Minutes</span>
-                        </div>
-                        <div class="time-unit">
-                            <span class="time-number" id="seconds">00</span>
-                            <span class="time-label">Seconds</span>
+                    <div class="countdown">
+                        <h3>Campaign Ends In:</h3>
+                        <div class="timer">
+                            <div class="time-unit">
+                                <span class="time-number" id="days">30</span>
+                                <span class="time-label">Days</span>
+                            </div>
+                            <div class="time-unit">
+                                <span class="time-number" id="hours">00</span>
+                                <span class="time-label">Hours</span>
+                            </div>
+                            <div class="time-unit">
+                                <span class="time-number" id="minutes">00</span>
+                                <span class="time-label">Min</span>
+                            </div>
+                            <div class="time-unit">
+                                <span class="time-number" id="seconds">00</span>
+                                <span class="time-label">Sec</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <a href="#join-lottery" class="cta-primary">Join Lottery Now</a>
-                <a href="#how-it-works" class="cta-secondary">Learn How</a>
+                <div class="hero-cta-group">
+                    <a href="#join-lottery" class="cta-primary">Start Staking Now</a>
+                    <a href="#how-it-works" class="cta-secondary">Learn How</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1495,10 +1854,10 @@
     <section class="final-cta" id="join-lottery">
         <div class="container">
             <h2>Don't Miss Out</h2>
-            <p>Start collecting your lottery tickets now - the more you buy, the higher your chances</p>
+            <p>Start staking your LAND tokens now - the more you stake, the higher your rewards</p>
             
             <a href="#" class="cta-primary">
-                Join LAND Lottery on Galxe
+                Start stacking today
             </a>
         </div>
     </section>
@@ -1553,7 +1912,7 @@
                             </a>
                         </div>
                         
-                        <a href="#" class="footer-launch-app">Launch App</a>
+                        <a href="#" class="footer-submit-ticket">Submit a Ticket</a>
                     </div>
 
                     <!-- Company Links -->
@@ -1609,6 +1968,13 @@
                         </form>
                     </div>
                 </div>
+            </div>
+        </div>
+        
+        <!-- Copyright Section -->
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright">© 2025 Landshare LLC. All rights reserved.</p>
             </div>
         </div>
     </footer>
